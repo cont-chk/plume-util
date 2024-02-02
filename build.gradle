@@ -105,8 +105,6 @@ apply plugin: 'org.checkerframework'
 
 checkerFramework {
   checkers = [
-    // No need to run CalledMethodsChecker, because ResourceLeakChecker does so.
-    // 'org.checkerframework.checker.calledmethods.CalledMethodsChecker',
     'org.checkerframework.checker.formatter.FormatterChecker',
     'org.checkerframework.checker.index.IndexChecker',
     'org.checkerframework.checker.interning.InterningChecker',
@@ -117,6 +115,7 @@ checkerFramework {
     'org.checkerframework.checker.signature.SignatureChecker',
     'org.checkerframework.checker.signedness.SignednessChecker',
     'org.checkerframework.common.initializedfields.InitializedFieldsChecker',
+    'org.checkerframework.checker.nonempty.NonEmptyChecker',
   ]
   extraJavacArgs = [
     '-Werror',
@@ -126,7 +125,10 @@ checkerFramework {
     '-ArequirePrefixInWarningSuppressions',
     '-AwarnRedundantAnnotations',
     '-AwarnUnneededSuppressions',
+    '-AassumeAssertionsAreEnabled',
+    '-AonlyDefs=\\.*CollectionsPlume',
   ]
+  excludeTests = true
 }
 // To use a locally-built Checker Framework, run gradle with "-PcfLocal".
 if (project.hasProperty('cfLocal')) {
