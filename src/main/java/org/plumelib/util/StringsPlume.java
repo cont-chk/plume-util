@@ -267,6 +267,7 @@ public final class StringsPlume {
   @SuppressWarnings({
     "lock:method.guarantee.violated", // side effect to local state
     "allcheckers:purity.not.sideeffectfree.call", // side effect to local state
+     "nonempty:method.invocation", // nonempty-fp-side-effect-unset : CF thinks SB.append might make itor @UnknownNonEmpty
   })
   @SideEffectFree
   public static String join(

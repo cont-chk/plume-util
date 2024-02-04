@@ -633,6 +633,7 @@ public final class CollectionsPlume {
    * @param set2 the first set to compare
    * @return true if the two sets contain the same elements in the same order
    */
+  @SuppressWarnings("nonempty:method.invocation") // nonempty-fp-size-alias : itor2 has the same size as itor1, which is checked for emptiness
   public static <T> boolean sortedSetEquals(SortedSet<T> set1, SortedSet<T> set2) {
     @SuppressWarnings("interning:not.interned")
     boolean sameObject = set1 == set2;

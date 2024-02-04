@@ -979,6 +979,7 @@ public final class MathPlume {
    *     null if no such exists or the iterator contains fewer than 3 elements
    * @see #modulusStrict(int[], boolean)
    */
+  @SuppressWarnings("nonempty:method.invocation") // true-positive : NoSuchElementException when itor has 2 elements
   public static int @Nullable @ArrayLen(2) [] modulusStrictInt(
       Iterator<Integer> itor, boolean nonstrictEnds) {
     if (!itor.hasNext()) {
@@ -1219,6 +1220,7 @@ public final class MathPlume {
    *     null if no such exists or the iterator contains fewer than 3 elements
    * @see #modulusStrict(int[], boolean)
    */
+  @SuppressWarnings("nonempty:method.invocation") // true-positive : NoSuchElementException when itor has 2 elements
   public static long @Nullable @ArrayLen(2) [] modulusStrictLong(
       Iterator<Long> itor, boolean nonstrictEnds) {
     if (!itor.hasNext()) {

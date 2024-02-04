@@ -211,6 +211,7 @@ public final class SystemPlume {
    * @param seconds the size of the time window, in seconds
    * @return the percentage of time spent garbage collecting, in the past {@code seconds} seconds
    */
+  @SuppressWarnings("nonempty:method.invocation") // nonempty-fp-static-init : `gcHistory` is never empty due to a static init block
   public static double gcPercentage(int seconds) {
     GcHistoryItem newest = gcHistory.getLast();
     long now = Instant.now().getEpochSecond(); // in seconds

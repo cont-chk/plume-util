@@ -779,6 +779,7 @@ public class EntryReader extends LineNumberReader implements Iterable<String>, I
    * @return next line from the reader, or null if there is no more input
    * @throws IOException if there is trouble with the reader
    */
+  @SuppressWarnings("nonempty:method.invocation") // nonempty-fp-side-effect-unset : CF conservatively thinks that FlnReader.readLine() will unset readers to @UnknownNonEmpty
   private @Nullable String getNextLine(@GuardSatisfied EntryReader this) throws IOException {
 
     if (readers.size() == 0) {
