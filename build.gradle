@@ -126,7 +126,6 @@ checkerFramework {
     '-AwarnRedundantAnnotations',
     '-AwarnUnneededSuppressions',
     '-AassumeAssertionsAreEnabled',
-    '-AonlyDefs=\\.*CollectionsPlume',
   ]
   excludeTests = true
 }
